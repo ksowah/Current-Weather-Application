@@ -1,5 +1,5 @@
 window.addEventListener('load', ()=>{
-    const key = "DYUzecqDCeLtOg7ZaqOnjGkJjGA8laYG"
+    const key = "FA2WGKg0MlXXCP1SC4ugWCEVKSQi2sfW"
     let longitude = ''
     let latitude = ''
     let temperatureDiscription = document.querySelector('.temperature-description')
