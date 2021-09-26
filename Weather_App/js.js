@@ -13,9 +13,7 @@ window.addEventListener('load', ()=>{
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(location =>{
             longitude = location.coords.longitude
-            latitude = location.coords.latitude 
-            console.log(latitude)
-            console.log(longitude)
+            latitude = location.coords.latitude
             const proxy = `https://cors-anywhere.herokuapp.com/`
             const zone = `${proxy}http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${key}&q=${latitude}%2C${longitude}&details=true&toplevel=true`
             const current = `${proxy}http://dataservice.accuweather.com/currentconditions/v1/178541?apikey=${key}&details=true`
@@ -25,7 +23,7 @@ window.addEventListener('load', ()=>{
                 return response.json()
             })
             .then(data =>{
-                console.log(data)
+                
            const {Temperature, WeatherText} = data[0]
            temperatureDegree.textContent = Temperature.Imperial.Value
            temperatureDiscription.innerText = WeatherText
@@ -47,7 +45,7 @@ window.addEventListener('load', ()=>{
                return feedback.json()
            })
            .then(info =>{
-               console.log(info)
+               
                const {TimeZone} = info
                locationTimezone.innerText = TimeZone.Name
 
